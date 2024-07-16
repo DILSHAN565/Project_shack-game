@@ -11,12 +11,11 @@ pipeline {
         maven 'maven3'
     }
     
-   /* 
-    environment {
+   environment {
         SCANNER_HOME = tool 'sonar-scanner'
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk'
+        PATH = "${env.PATH}:${env.JAVA_HOME}/bin"
     }
-   */
-
 
     stages {
         stage('Git Checkout') {
